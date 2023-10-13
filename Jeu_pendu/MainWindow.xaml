@@ -1,12 +1,111 @@
-﻿<Window x:Class="Jeu_pendu.MainWindow"
+﻿<Window x:Class="Pendu.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Jeu_pendu"
+        xmlns:local="clr-namespace:Pendu"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="800">
     <Grid Background="BurlyWood">
 
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="335*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+
+
+
+        <Grid Name="Haut" Grid.Row="0">
+            <TextBlock HorizontalAlignment="Center" Text="Jeu du pendu par CAMPANINI Nathan" Background="BurlyWood" FontSize="25" />
+        </Grid>
+        <Grid Name="Mileu" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="Lettres" HorizontalAlignment="Center" Width="400" Height="335" VerticalAlignment="Center" Grid.Row="2">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Margin" Value="10, 5, 10, 5"/>
+                        <Setter Property="Background" Value="DarkGoldenrod"/>
+                        <Setter Property="Foreground" Value="Black"/>
+                        <Setter Property="FontSize" Value="25"/>
+                        <Style.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="15"/>
+                            </Style>
+                        </Style.Resources>
+                    </Style>
+                </Grid.Resources>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="0" Name ="A" Content="A" Click="BTN_Click"/>
+                <Button Grid.Row="0" Grid.Column="1" Name ="B" Content="B" Click="BTN_Click"/>
+                <Button Grid.Row="0" Grid.Column="2" Name ="C" Content="C" Click="BTN_Click"/>
+                <Button Grid.Row="0" Grid.Column="3" Name ="D" Content="D" Click="BTN_Click"/>
+
+
+
+                <Button Grid.Row="1" Grid.Column="0" Name ="E" Content="E" Click="BTN_Click"/>
+                <Button Grid.Row="1" Grid.Column="1" Name ="F" Content="F" Click="BTN_Click"/>
+                <Button Grid.Row="1" Grid.Column="2" Name ="G" Content="G" Click="BTN_Click"/>
+                <Button Grid.Row="1" Grid.Column="3" Name ="H" Content="H" Click="BTN_Click"/>
+
+                <Button Grid.Row="2" Grid.Column="0" Name="I" Content="I" Click="BTN_Click"/>
+                <Button Grid.Row="2" Grid.Column="1" Name="J" Content="J" Click="BTN_Click"/>
+                <Button Grid.Row="2" Grid.Column="2" Name="K" Content="K" Click="BTN_Click"/>
+                <Button Grid.Row="2" Grid.Column="3" Name="L" Content="L" Click="BTN_Click"/>
+
+
+                <Button Grid.Row="3" Grid.Column="0" Name="M" Content="M" Click="BTN_Click"/>
+                <Button Grid.Row="3" Grid.Column="1" Name="N" Content="N" Click="BTN_Click"/>
+                <Button Grid.Row="3" Grid.Column="2" Name="O" Content="O" Click="BTN_Click"/>
+                <Button Grid.Row="3" Grid.Column="3" Name="P" Content="P" Click="BTN_Click"/>
+
+
+                <Button Grid.Row="4" Grid.Column="0" Name="Q" Content="Q" Click="BTN_Click"/>
+                <Button Grid.Row="4" Grid.Column="1" Name="R" Content="R" Click="BTN_Click"/>
+                <Button Grid.Row="4" Grid.Column="2" Name="S" Content="S" Click="BTN_Click"/>
+                <Button Grid.Row="4" Grid.Column="3" Name="T" Content="T" Click="BTN_Click"/>
+
+
+
+                <Button Grid.Row="5" Grid.Column="0" Name="U" Content="U" Click="BTN_Click"/>
+                <Button Grid.Row="5" Grid.Column="1" Name="V" Content="V" Click="BTN_Click"/>
+                <Button Grid.Row="5" Grid.Column="2" Name="W" Content="W" Click="BTN_Click"/>
+                <Button Grid.Row="5" Grid.Column="3" Name="X" Content="X" Click="BTN_Click"/>
+
+
+                <Button Grid.Row="6" Grid.Column="1" Name="Y" Content="Y" Click="BTN_Click"/>
+                <Button Grid.Row="6" Grid.Column="2" Name="Z" Content="Z" Click="BTN_Click"/>
+            </Grid>
+            <Grid Name="Img_Pendu" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1">
+                <Image Source="/Ressources/Pendu_0_Erreur.jpg" Margin="0,8,0,8"/>
+            </Grid>
+        </Grid>
+        <Grid Name="Bas"  Grid.Row="2">
+            <Label Name="Recommence" Content="Recommencer?" Background="BurlyWood" HorizontalAlignment="Left" Margin="50,15,0,15" Opacity="0"/>
+            <Button Name="Oui_BTN" Content="Oui" HorizontalAlignment="Left" Background="Green" Click="Oui_Click" Margin="145,15,0,15" Width="25" Opacity="0"/>
+            <TextBlock Name="txt_mot_affiche" Text="" Background="BurlyWood" FontSize="30" HorizontalAlignment="Center"/>
+        </Grid>
     </Grid>
+
 </Window>

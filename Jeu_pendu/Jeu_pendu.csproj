@@ -94,5 +94,21 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Pendu_0_Erreur.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Pendu_1_Erreur.jpg" />
+    <Resource Include="Ressources\Pendu_2_Erreur.jpg" />
+    <Resource Include="Ressources\Pendu_3_Erreur.jpg" />
+    <Resource Include="Ressources\Pendu_4_Erreur.jpg" />
+    <Resource Include="Ressources\Pendu_5_Erreur.jpg" />
+    <Resource Include="Ressources\Pendu_6_Erreur.jpg" />
+    <Resource Include="Ressources\Pendu_7_Erreur.jpg" />
+    <Resource Include="Ressources\Pendu_Perdu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Pendu_Gagné.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
