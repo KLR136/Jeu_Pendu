@@ -27,7 +27,7 @@ namespace Pendu
         }
 
 
-
+        //johj
 
         // Initialisation de toutes les variables
         int nombre_erreur = 0;
