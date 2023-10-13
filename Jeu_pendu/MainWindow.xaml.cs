@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jeu_pendu.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,9 +33,6 @@ namespace Pendu
         // Initialisation de toutes les variables
         int nombre_erreur = 0;
         bool Lettre_dedans = false;
-        bool gagne = false;
-        bool perdu = false;
-        bool continuer = false;
         string mot_devine = "";
         string mot_affiche = "";
         public string[] Mots = { "PATATE ", "ROULADE ", "FORCE ", "ORGANE ", "PILOTI ", "FARCEUR ", "MOTIVATION ", "VAILLANCE ", "BOULETTE ", "CONDUCTEUR " };
@@ -50,7 +48,6 @@ namespace Pendu
                 mot_affiche += "_ ";
             }
             txt_mot_affiche.Text = mot_affiche;
-            
         }
 
 
@@ -61,12 +58,13 @@ namespace Pendu
         private void Oui_Click(object sender, RoutedEventArgs e)
         {
             Restart();
+            Recommence.Opacity = 0;
+            Oui_BTN.Opacity = 0;
         }
         private void BTN_Click(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
             string btnContent = btn.Content.ToString();
-            btn.IsEnabled = false;
             for (int i = 0; i < mot_devine.Length; i++)
             {
                 if (btnContent == mot_devine[i].ToString())
@@ -79,7 +77,33 @@ namespace Pendu
             {
                 nombre_erreur += 1;
             }
+            if (nombre_erreur < 8)
+            {
+                Image_pendu.Source = new BitmapImage(new Uri("/Ressources/Pendu_" + nombre_erreur.ToString() + "_Erreur.jpg"));
+            }
+            if (nombre_erreur == 8)
+            {
+                Image_pendu.Source = new BitmapImage(new Uri("/Ressources/Pendu_Perdu.jpg"));
+                txt_mot_affiche.Text = "Le mot était " + mot_devine + ".";
+                Recommence.Opacity = 100;
+                Oui_BTN.Opacity = 100;
+            }
+            if (mot_affiche == mot_devine)
+            {
+                Image_pendu.Source = new BitmapImage(new Uri("/Ressources/Pendu_Gagné.jpg"));
+                txt_mot_affiche.Text = mot_affiche + ", vous avez gagné, bien joué !!!";
+                Recommence.Opacity = 100;
+                Oui_BTN.Opacity = 100;
+            }
             Lettre_dedans = false;
+            btn.IsEnabled = false;
+        }
+        private void Oui_Click(object sender, RoutedEventArgs e)
+        {
+            if (Oui_BTN.Opacity == 0)
+            {
+
+            }
         }
     }
 }

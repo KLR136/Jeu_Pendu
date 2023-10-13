@@ -97,8 +97,8 @@
                 <Button Grid.Row="6" Grid.Column="1" Name="Y" Content="Y" Click="BTN_Click"/>
                 <Button Grid.Row="6" Grid.Column="2" Name="Z" Content="Z" Click="BTN_Click"/>
             </Grid>
-            <Grid Name="Img_Pendu" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1">
-                <Image Source="/Ressources/Pendu_0_Erreur.jpg" Margin="0,8,0,8"/>
+            <Grid HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1">
+                <Image Name="Image_pendu" Source="/Ressources/Pendu_0_Erreur.jpg" Margin="0,8,0,8"/>
             </Grid>
         </Grid>
         <Grid Name="Bas"  Grid.Row="2">
