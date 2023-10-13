@@ -100,6 +100,7 @@ namespace Pendu
         }
         private void Oui_Click(object sender, RoutedEventArgs e)
         {
+            //toto
             if (Oui_BTN.Opacity == 0)
             {
 
