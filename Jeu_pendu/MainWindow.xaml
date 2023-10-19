@@ -104,7 +104,7 @@
         <Grid Name="Bas"  Grid.Row="2">
             <Label Name="Recommence" Content="Recommencer?" Background="BurlyWood" HorizontalAlignment="Left" Margin="50,15,0,15" Opacity="0"/>
             <Button Name="Oui_BTN" Content="Oui" HorizontalAlignment="Left" Background="Green" Click="Oui_Click" Margin="145,15,0,15" Width="25" Opacity="0"/>
-            <TextBlock Name="txt_mot_affiche" Text="" Background="BurlyWood" FontSize="30" HorizontalAlignment="Center"/>
+            <TextBlock Name="txt_mot_affiche" Text="" Background="BurlyWood" FontSize="20" HorizontalAlignment="Center"/>
         </Grid>
     </Grid>
 
