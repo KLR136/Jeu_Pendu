@@ -100,6 +100,10 @@ namespace Pendu
                 txt_mot_affiche.Text = "Le mot était " + mot_devine + ".";
                 Recommence.Opacity = 100;
                 Oui_BTN.Opacity = 100;
+                foreach (Button tout_bouton in Lettres.Children.OfType<Button>())
+                {
+                    tout_bouton.IsEnabled = false;
+                }
             }
             mot_affiche_sans_espace = mot_affiche.Replace(" ", "");
             if (mot_affiche_sans_espace == mot_devine)
@@ -108,6 +112,10 @@ namespace Pendu
                 txt_mot_affiche.Text = mot_affiche + ", vous avez gagné, bien joué !!!";
                 Recommence.Opacity = 100;
                 Oui_BTN.Opacity = 100;
+                foreach (Button tout_bouton in Lettres.Children.OfType<Button>())
+                {
+                    tout_bouton.IsEnabled = false;
+                }
             }
             Lettre_dedans = false;
             btn.IsEnabled = false;
