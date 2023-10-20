@@ -26,6 +26,7 @@ namespace Pendu
             InitializeComponent();
             Restart();
         }
+        // finito
 
         // Initialisation de toutes les variables
         int nombre_erreur = 0;
