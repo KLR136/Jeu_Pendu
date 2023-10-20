@@ -27,21 +27,20 @@ namespace Pendu
             Restart();
         }
 
-
-        //johj
-
         // Initialisation de toutes les variables
         int nombre_erreur = 0;
         bool Lettre_dedans = false;
         string mot_devine = "";
         string mot_affiche = "";
         string mot_affiche_sans_espace = "";
+        string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         public string[] Mots = { "PATATE", "ROULADE", "FORCE", "ORGANE", "PILOTI", "FARCEUR", "MOTIVATION", "VAILLANCE", "BOULETTE", "CONDUCTEUR" };
-        // Méthode qui se lance quand on appuie sur oui, qui indique le mot à trouver, qui affiche le mot a deviner caché dans la textbox du bas et le met a jour chaque frame
-        // tant que le joueur n'a ni gagné ni perdu, puis indique un message dépendant si il a gagné et passe instantanément au mot suivant (A REVOIR) 
-        // !!! PRBLM IMPORTANT !!! LA METHODE NE SE LANCE PAS AU LANCEMENT, CE QUI EMPECHE D'AFFICHER LA TEXTBOX CORRECTEMENT.
         public void Restart()
         {
+            foreach (Button tout_bouton in Lettres.Children.OfType<Button>())
+            {
+                tout_bouton.IsEnabled = true;
+            }
             Image_pendu.Source = new BitmapImage(new Uri("/Ressources/Pendu_0_Erreur.jpg", UriKind.Relative));
             mot_affiche = "";
             nombre_erreur = 0;
@@ -53,7 +52,6 @@ namespace Pendu
             }
             txt_mot_affiche.Text = mot_affiche;
         }
-
 
         // Quand on appuie sur un bouton, définie une variable i dans une boucle for qui vérifie si chaque caractère du mot_affiche correspond à la lettre du bouton
         // Si c'est le cas, créer un sous string qui prend tous les caractères strictement avant et après le "_ " correspondant et rajoute la lettre du bouton et défini Lettre_dedans comme vrai
