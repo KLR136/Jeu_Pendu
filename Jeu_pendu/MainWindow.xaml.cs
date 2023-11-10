@@ -1,5 +1,6 @@
 ﻿using Jeu_pendu.Properties;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,8 +35,8 @@ namespace Pendu
         string mot_devine = "";
         string mot_affiche = "";
         string mot_affiche_sans_espace = "";
-        string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        public string[] Mots = { "PATATE", "ROULADE", "FORCE", "ORGANE", "PILOTI", "FARCEUR", "MOTIVATION", "VAILLANCE", "BOULETTE", "CONDUCTEUR" };
+        public string liste_mot = File.ReadAllText("/Ressources/liste_mots.txt");
+        List<string> Mots = new List<string>(liste_mot.Split(' '));
         public void Restart()
         {
             foreach (Button tout_bouton in Lettres.Children.OfType<Button>())
@@ -67,6 +68,7 @@ namespace Pendu
                 Oui_BTN.Opacity = 0;
             }
         }
+
         private void BTN_Click(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
@@ -109,6 +111,7 @@ namespace Pendu
             if (mot_affiche_sans_espace == mot_devine)
             {
                 Image_pendu.Source = new BitmapImage(new Uri("/Ressources/Pendu_Gagné.jpg", UriKind.Relative));
+                txt_mot_affiche.FontSize = 20;
                 txt_mot_affiche.Text = mot_affiche + ", vous avez gagné, bien joué !!!";
                 Recommence.Opacity = 100;
                 Oui_BTN.Opacity = 100;

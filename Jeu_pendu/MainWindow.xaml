@@ -11,8 +11,8 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="40*"/>
-            <RowDefinition Height="335*"/>
-            <RowDefinition Height="50*"/>
+            <RowDefinition Height="310*"/>
+            <RowDefinition Height="75*"/>
         </Grid.RowDefinitions>
 
 
@@ -20,23 +20,29 @@
         <Grid Name="Haut" Grid.Row="0">
             <TextBlock HorizontalAlignment="Center" Text="Jeu du pendu par CAMPANINI Nathan" Background="BurlyWood" FontSize="25" />
         </Grid>
+        
         <Grid Name="Mileu" Grid.Row="1">
+            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Grid x:Name="Lettres" HorizontalAlignment="Center" Width="400" Height="335" VerticalAlignment="Center" Grid.Row="2">
+        
+            <Grid Name="Lettres" HorizontalAlignment="Center" Width="400" Height="335" VerticalAlignment="Center" Grid.Row="2">
+
                 <Grid.Resources>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="Margin" Value="10, 5, 10, 5"/>
                         <Setter Property="Background" Value="DarkGoldenrod"/>
                         <Setter Property="Foreground" Value="Black"/>
                         <Setter Property="FontSize" Value="25"/>
+                        
                         <Style.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="15"/>
                             </Style>
                         </Style.Resources>
+                        
                     </Style>
                 </Grid.Resources>
 
@@ -97,14 +103,32 @@
                 <Button Grid.Row="6" Grid.Column="1" Name="Y" Content="Y" Click="BTN_Click"/>
                 <Button Grid.Row="6" Grid.Column="2" Name="Z" Content="Z" Click="BTN_Click"/>
             </Grid>
+            
             <Grid HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1">
                 <Image Name="Image_pendu" Source="/Ressources/Pendu_0_Erreur.jpg" Margin="0,8,0,8"/>
             </Grid>
+            
         </Grid>
         <Grid Name="Bas"  Grid.Row="2">
-            <Label Name="Recommence" Content="Recommencer?" Background="BurlyWood" HorizontalAlignment="Left" Margin="50,15,0,15" Opacity="0"/>
-            <Button Name="Oui_BTN" Content="Oui" HorizontalAlignment="Left" Background="Green" Click="Oui_Click" Margin="145,15,0,15" Width="25" Opacity="0"/>
-            <TextBlock Name="txt_mot_affiche" Text="" Background="BurlyWood" FontSize="20" HorizontalAlignment="Center"/>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+        
+            <Grid Name="Grille_Recommencer" Grid.Column="0">
+                <TextBlock Name="txt_mot_affiche" Text="" Background="BurlyWood" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            
+            <Grid Name="Grille_Oui" Grid.Column="1">
+                <Label Name="Recommence" Content="Recommencer?" FontSize="25" Background="BurlyWood" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0" Width="178"/>
+            </Grid>
+            
+            <Grid Name="Grille_mot_affiche" Grid.Column="2">
+                <Button Name="Oui_BTN" Content="Oui" FontSize="25" HorizontalAlignment="Center" Background="Green" Click="Oui_Click" Opacity="0" Width="90"/>
+            </Grid>
+        
         </Grid>
     </Grid>
 
