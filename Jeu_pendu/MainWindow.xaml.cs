@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 
 namespace Pendu
 {
+    ///bouh
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
@@ -35,8 +36,7 @@ namespace Pendu
         string mot_devine = "";
         string mot_affiche = "";
         string mot_affiche_sans_espace = "";
-        public string liste_mot = File.ReadAllText("/Ressources/liste_mots.txt");
-        List<string> Mots = new List<string>(liste_mot.Split(' '));
+        public string[] Mots = {"BONJOUR", "CSHARP", "LISTE", "PROGRAMME", "INFORMATIQUE", "LANGAGE", "MODELE", "ENTRAINEMENT", "INTELLIGENCE", "ARTIFICIELLE", "DEVELOPPEMENT", "OPENAI", "GPT", "SYNTAXE", "VARIABLE", "BOUCLE", "CONDITION", "METHODE", "CLASSE"};
         public void Restart()
         {
             foreach (Button tout_bouton in Lettres.Children.OfType<Button>())
